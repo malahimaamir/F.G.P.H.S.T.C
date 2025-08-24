@@ -14,6 +14,8 @@ export const StudyPlanSection = () => (
         </p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+        {/* Foundation Course */}
         <Card className="shadow-card hover:shadow-elegant transition-shadow duration-300">
           <CardHeader>
             <BookOpen className="w-12 h-12 text-primary mb-4" />
@@ -21,14 +23,13 @@ export const StudyPlanSection = () => (
           </CardHeader>
           <CardContent>
             <p className="text-gray-600 mb-4">Build strong fundamentals with our comprehensive foundation program.</p>
-            <Button 
-              className="w-full" 
-              onClick={() => window.location.href = '/foundation-course'}
-            >
-              View Details
-            </Button>
+            <Link to="/foundation-course">
+              <Button className="w-full">View Details</Button>
+            </Link>
           </CardContent>
         </Card>
+
+        {/* Advanced Program */}
         <Card className="shadow-card hover:shadow-elegant transition-shadow duration-300">
           <CardHeader>
             <GraduationCap className="w-12 h-12 text-primary mb-4" />
@@ -36,14 +37,13 @@ export const StudyPlanSection = () => (
           </CardHeader>
           <CardContent>
             <p className="text-gray-600 mb-4">Advanced coursework for experienced learners seeking specialization.</p>
-            <Button 
-              className="w-full" 
-              onClick={() => window.location.href = '/advanced-program'}
-            >
-              View Details
-            </Button>
+            <Link to="/advanced-program">
+              <Button className="w-full">View Details</Button>
+            </Link>
           </CardContent>
         </Card>
+
+        {/* Group Study */}
         <Card className="shadow-card hover:shadow-elegant transition-shadow duration-300">
           <CardHeader>
             <Users className="w-12 h-12 text-primary mb-4" />
@@ -51,14 +51,12 @@ export const StudyPlanSection = () => (
           </CardHeader>
           <CardContent>
             <p className="text-gray-600 mb-4">Collaborative learning environment with peer support and guidance.</p>
-            <Button 
-              className="w-full" 
-              onClick={() => window.location.href = '/group-study'}
-            >
-              View Details
-            </Button>
+            <Link to="/group-study">
+              <Button className="w-full">View Details</Button>
+            </Link>
           </CardContent>
         </Card>
+
       </div>
     </div>
   </section>
@@ -331,7 +329,6 @@ export const EntrySection = () => (
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
 
-        {/* Application */}
         <Link to="/applications">
           <Card className="text-center shadow-card hover:shadow-elegant transition-shadow duration-300 cursor-pointer">
             <CardContent className="p-6">
@@ -344,7 +341,6 @@ export const EntrySection = () => (
           </Card>
         </Link>
 
-        {/* Review */}
         <Link to="/review">
           <Card className="text-center shadow-card hover:shadow-elegant transition-shadow duration-300 cursor-pointer">
             <CardContent className="p-6">
