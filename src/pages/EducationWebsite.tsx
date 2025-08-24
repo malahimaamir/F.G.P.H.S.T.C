@@ -5,6 +5,7 @@ import Auth from "@/components/Auth";
 import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
 import ServicesSection from "@/components/ServicesSection";
+import EventsSection from "@/components/EventsSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import {
@@ -14,7 +15,7 @@ import {
   PrincipalSection,
   PaymentModeSection,
   ScheduleSection,
-  EntrySection
+  EntrySection,
 } from "@/components/SectionsContent";
 
 const EducationWebsite = () => {
@@ -23,12 +24,12 @@ const EducationWebsite = () => {
 
   useEffect(() => {
     // Set up auth state listener
-    const { data: { subscription } } = supabase.auth.onAuthStateChange(
-      (event, session) => {
-        setSession(session);
-        setIsLoading(false);
-      }
-    );
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((event, session) => {
+      setSession(session);
+      setIsLoading(false);
+    });
 
     // Check for existing session
     supabase.auth.getSession().then(({ data: { session } }) => {
@@ -65,7 +66,7 @@ const EducationWebsite = () => {
   return (
     <div className="min-h-screen">
       <Navigation onSignOut={handleSignOut} />
-      
+
       {/* Main Content */}
       <main className="pt-16">
         <HeroSection />
@@ -77,7 +78,9 @@ const EducationWebsite = () => {
         <ScheduleSection />
         <EntrySection />
         <ServicesSection />
+        <EventsSection />
         <ContactSection />
+        
       </main>
 
       <Footer />

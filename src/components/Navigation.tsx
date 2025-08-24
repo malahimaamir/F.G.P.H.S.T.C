@@ -35,7 +35,8 @@ const Navigation = ({ onSignOut }: NavigationProps) => {
     { id: 'paymentmode', label: 'Payment Mode', color: 'text-payment-red' },
     { id: 'schedule', label: 'Schedule', color: 'text-primary' },
     { id: 'entry', label: 'Entry', color: 'text-primary' },
-    { id: 'contact', label: 'Contact', color: 'text-primary' },
+    { id: 'events', label: 'Events', color: 'text-primary' },
+    { id: 'contact', label: 'Contact', color: 'text-primary' },    
   ];
 
   return (
