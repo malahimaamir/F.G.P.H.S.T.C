@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Calendar, BookOpen, Users, GraduationCap, CreditCard, Clock, UserCheck, Phone } from "lucide-react";
+import { Link } from "react-router-dom";
 
 // Study Plan Section
 export const StudyPlanSection = () => (
@@ -73,43 +74,61 @@ export const ExamSection = () => (
           Comprehensive examination system designed to assess and validate your knowledge effectively.
         </p>
       </div>
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <Card className="text-center shadow-card hover:shadow-elegant transition-shadow duration-300 border-exam-blue/20">
-          <CardContent className="p-6">
-            <div className="w-16 h-16 bg-exam-blue/20 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Calendar className="w-8 h-8 text-exam-blue" />
-            </div>
-            <h3 className="font-semibold text-exam-blue mb-2">Regular Tests</h3>
-            <p className="text-sm text-gray-600">Weekly assessments to track progress</p>
-          </CardContent>
-        </Card>
-        <Card className="text-center shadow-card hover:shadow-elegant transition-shadow duration-300 border-exam-blue/20">
-          <CardContent className="p-6">
-            <div className="w-16 h-16 bg-exam-blue/20 rounded-full flex items-center justify-center mx-auto mb-4">
-              <BookOpen className="w-8 h-8 text-exam-blue" />
-            </div>
-            <h3 className="font-semibold text-exam-blue mb-2">Mid-Term Exams</h3>
-            <p className="text-sm text-gray-600">Comprehensive mid-semester evaluations</p>
-          </CardContent>
-        </Card>
-        <Card className="text-center shadow-card hover:shadow-elegant transition-shadow duration-300 border-exam-blue/20">
-          <CardContent className="p-6">
-            <div className="w-16 h-16 bg-exam-blue/20 rounded-full flex items-center justify-center mx-auto mb-4">
-              <GraduationCap className="w-8 h-8 text-exam-blue" />
-            </div>
-            <h3 className="font-semibold text-exam-blue mb-2">Final Exams</h3>
-            <p className="text-sm text-gray-600">Year-end comprehensive assessments</p>
-          </CardContent>
-        </Card>
-        <Card className="text-center shadow-card hover:shadow-elegant transition-shadow duration-300 border-exam-blue/20">
-          <CardContent className="p-6">
-            <div className="w-16 h-16 bg-exam-blue/20 rounded-full flex items-center justify-center mx-auto mb-4">
-              <UserCheck className="w-8 h-8 text-exam-blue" />
-            </div>
-            <h3 className="font-semibold text-exam-blue mb-2">Online Tests</h3>
-            <p className="text-sm text-gray-600">Digital assessment platform</p>
-          </CardContent>
-        </Card>
+        
+        {/* Regular Tests */}
+        <Link to="/regular-tests">
+          <Card className="text-center shadow-card hover:shadow-elegant transition-shadow duration-300 border-exam-blue/20 cursor-pointer">
+            <CardContent className="p-6">
+              <div className="w-16 h-16 bg-exam-blue/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Calendar className="w-8 h-8 text-exam-blue" />
+              </div>
+              <h3 className="font-semibold text-exam-blue mb-2">Regular Tests</h3>
+              <p className="text-sm text-gray-600">Weekly assessments to track progress</p>
+            </CardContent>
+          </Card>
+        </Link>
+
+        {/* Mid-Term Exams */}
+        <Link to="/mid-term-exams">
+          <Card className="text-center shadow-card hover:shadow-elegant transition-shadow duration-300 border-exam-blue/20 cursor-pointer">
+            <CardContent className="p-6">
+              <div className="w-16 h-16 bg-exam-blue/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <BookOpen className="w-8 h-8 text-exam-blue" />
+              </div>
+              <h3 className="font-semibold text-exam-blue mb-2">Mid-Term Exams</h3>
+              <p className="text-sm text-gray-600">Comprehensive mid-semester evaluations</p>
+            </CardContent>
+          </Card>
+        </Link>
+
+        {/* Final Exams */}
+        <Link to="/final-exams">
+          <Card className="text-center shadow-card hover:shadow-elegant transition-shadow duration-300 border-exam-blue/20 cursor-pointer">
+            <CardContent className="p-6">
+              <div className="w-16 h-16 bg-exam-blue/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <GraduationCap className="w-8 h-8 text-exam-blue" />
+              </div>
+              <h3 className="font-semibold text-exam-blue mb-2">Final Exams</h3>
+              <p className="text-sm text-gray-600">Year-end comprehensive assessments</p>
+            </CardContent>
+          </Card>
+        </Link>
+
+        {/* Online Tests */}
+        <Link to="/online-tests">
+          <Card className="text-center shadow-card hover:shadow-elegant transition-shadow duration-300 border-exam-blue/20 cursor-pointer">
+            <CardContent className="p-6">
+              <div className="w-16 h-16 bg-exam-blue/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <UserCheck className="w-8 h-8 text-exam-blue" />
+              </div>
+              <h3 className="font-semibold text-exam-blue mb-2">Online Tests</h3>
+              <p className="text-sm text-gray-600">Digital assessment platform</p>
+            </CardContent>
+          </Card>
+        </Link>
+
       </div>
     </div>
   </section>
@@ -255,36 +274,46 @@ export const ScheduleSection = () => (
         </p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <Card className="shadow-card hover:shadow-elegant transition-shadow duration-300">
-          <CardHeader>
-            <Clock className="w-12 h-12 text-primary mb-4" />
-            <CardTitle>Morning Classes</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="text-gray-600 mb-4">8:00 AM - 12:00 PM</p>
-            <p className="text-sm text-gray-500">Core subjects and theoretical sessions</p>
-          </CardContent>
-        </Card>
-        <Card className="shadow-card hover:shadow-elegant transition-shadow duration-300">
-          <CardHeader>
-            <BookOpen className="w-12 h-12 text-primary mb-4" />
-            <CardTitle>Afternoon Sessions</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="text-gray-600 mb-4">1:00 PM - 5:00 PM</p>
-            <p className="text-sm text-gray-500">Practical sessions and lab work</p>
-          </CardContent>
-        </Card>
-        <Card className="shadow-card hover:shadow-elegant transition-shadow duration-300">
-          <CardHeader>
-            <Users className="w-12 h-12 text-primary mb-4" />
-            <CardTitle>Evening Programs</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="text-gray-600 mb-4">6:00 PM - 9:00 PM</p>
-            <p className="text-sm text-gray-500">Special programs and extra activities</p>
-          </CardContent>
-        </Card>
+        
+        <Link to="/morning-classes">
+          <Card className="shadow-card hover:shadow-elegant transition-shadow duration-300 cursor-pointer">
+            <CardHeader>
+              <Clock className="w-12 h-12 text-primary mb-4" />
+              <CardTitle>Morning Classes</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-gray-600 mb-4">8:00 AM - 12:00 PM</p>
+              <p className="text-sm text-gray-500">Core subjects and theoretical sessions</p>
+            </CardContent>
+          </Card>
+        </Link>
+
+        <Link to="/afternoon-sessions">
+          <Card className="shadow-card hover:shadow-elegant transition-shadow duration-300 cursor-pointer">
+            <CardHeader>
+              <BookOpen className="w-12 h-12 text-primary mb-4" />
+              <CardTitle>Afternoon Sessions</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-gray-600 mb-4">1:00 PM - 5:00 PM</p>
+              <p className="text-sm text-gray-500">Practical sessions and lab work</p>
+            </CardContent>
+          </Card>
+        </Link>
+
+        <Link to="/evening-programs">
+          <Card className="shadow-card hover:shadow-elegant transition-shadow duration-300 cursor-pointer">
+            <CardHeader>
+              <Users className="w-12 h-12 text-primary mb-4" />
+              <CardTitle>Evening Programs</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-gray-600 mb-4">6:00 PM - 9:00 PM</p>
+              <p className="text-sm text-gray-500">Special programs and extra activities</p>
+            </CardContent>
+          </Card>
+        </Link>
+
       </div>
     </div>
   </section>
@@ -301,42 +330,59 @@ export const EntrySection = () => (
         </p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <Card className="text-center shadow-card hover:shadow-elegant transition-shadow duration-300">
-          <CardContent className="p-6">
-            <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
-              <span className="text-primary font-bold text-xl">1</span>
-            </div>
-            <h3 className="font-semibold text-gray-800 mb-2">Application</h3>
-            <p className="text-sm text-gray-600">Submit your application online or in person</p>
-          </CardContent>
-        </Card>
-        <Card className="text-center shadow-card hover:shadow-elegant transition-shadow duration-300">
-          <CardContent className="p-6">
-            <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
-              <span className="text-primary font-bold text-xl">2</span>
-            </div>
-            <h3 className="font-semibold text-gray-800 mb-2">Review</h3>
-            <p className="text-sm text-gray-600">Application review and document verification</p>
-          </CardContent>
-        </Card>
-        <Card className="text-center shadow-card hover:shadow-elegant transition-shadow duration-300">
-          <CardContent className="p-6">
-            <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
-              <span className="text-primary font-bold text-xl">3</span>
-            </div>
-            <h3 className="font-semibold text-gray-800 mb-2">Interview</h3>
-            <p className="text-sm text-gray-600">Personal interview with admission committee</p>
-          </CardContent>
-        </Card>
-        <Card className="text-center shadow-card hover:shadow-elegant transition-shadow duration-300">
-          <CardContent className="p-6">
-            <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
-              <span className="text-primary font-bold text-xl">4</span>
-            </div>
-            <h3 className="font-semibold text-gray-800 mb-2">Enrollment</h3>
-            <p className="text-sm text-gray-600">Complete enrollment and begin your journey</p>
-          </CardContent>
-        </Card>
+
+        {/* Application */}
+        <Link to="/applications">
+          <Card className="text-center shadow-card hover:shadow-elegant transition-shadow duration-300 cursor-pointer">
+            <CardContent className="p-6">
+              <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-primary font-bold text-xl">1</span>
+              </div>
+              <h3 className="font-semibold text-gray-800 mb-2">Application</h3>
+              <p className="text-sm text-gray-600">Submit your application online or in person</p>
+            </CardContent>
+          </Card>
+        </Link>
+
+        {/* Review */}
+        <Link to="/review">
+          <Card className="text-center shadow-card hover:shadow-elegant transition-shadow duration-300 cursor-pointer">
+            <CardContent className="p-6">
+              <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-primary font-bold text-xl">2</span>
+              </div>
+              <h3 className="font-semibold text-gray-800 mb-2">Review</h3>
+              <p className="text-sm text-gray-600">Application review and document verification</p>
+            </CardContent>
+          </Card>
+        </Link>
+
+        {/* Interview */}
+        <Link to="/interview">
+          <Card className="text-center shadow-card hover:shadow-elegant transition-shadow duration-300 cursor-pointer">
+            <CardContent className="p-6">
+              <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-primary font-bold text-xl">3</span>
+              </div>
+              <h3 className="font-semibold text-gray-800 mb-2">Interview</h3>
+              <p className="text-sm text-gray-600">Personal interview with admission committee</p>
+            </CardContent>
+          </Card>
+        </Link>
+
+        {/* Enrollment */}
+        <Link to="/enrollment">
+          <Card className="text-center shadow-card hover:shadow-elegant transition-shadow duration-300 cursor-pointer">
+            <CardContent className="p-6">
+              <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-primary font-bold text-xl">4</span>
+              </div>
+              <h3 className="font-semibold text-gray-800 mb-2">Enrollment</h3>
+              <p className="text-sm text-gray-600">Complete enrollment and begin your journey</p>
+            </CardContent>
+          </Card>
+        </Link>
+
       </div>
     </div>
   </section>
